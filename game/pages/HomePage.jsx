@@ -12,14 +12,14 @@ export const HomePage = ({ postId }) => {
       <h1 className={cn("relative z-20 text-xl text-white md:text-4xl")}>
         Welcome to Devvit
       </h1>
-      <p className="relative z-20 mb-4 mt-2 text-center text-neutral-300">
+      <p className="relative z-20 mt-2 mb-4 text-center text-neutral-300">
         Let's build something awesome!
       </p>
       <img
         src="/assets/default-snoovatar.png"
         alt="default snoovatar picture"
       />
-      <p className="relative z-20 mb-4 mt-2 text-center text-neutral-300">
+      <p className="relative z-20 mt-2 mb-4 text-center text-neutral-300">
         PostId: {postId}
       </p>
       <MagicButton
@@ -37,8 +37,8 @@ const MagicButton = ({ children, ...props }) => {
   return (
     <button
       className={cn(
-        "relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50",
-        props.className
+        "relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 focus:outline-none",
+        props.className,
       )}
       {...props}
     >
