@@ -21,4 +21,5 @@ This is a template for creating a Devvit webview app using React and Tailwind CS
 
 1. Clone this repository
 2. Run `npm install` or `yarn install` or `pnpm install`
-3. Run `npm run dev` or `yarn dev` or `pnpm dev` to start the development server with HMR on reddit
+3. modify the `devvit.yaml` file to match your app name also update `package.json` with your subreddit name
+4. Run `npm run dev` or `yarn dev` or `pnpm dev` to start the development server with HMR on reddit
