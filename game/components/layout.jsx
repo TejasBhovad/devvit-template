@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Navigation } from "./Navigation";
+import { Navigation } from "./navigation";
 import { cn } from "../utils";
 
 export const Layout = ({ children, variant = "default" }) => {

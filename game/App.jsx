@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { HomePage } from "./pages/HomePage";
-import { PokemonPage } from "./pages/PokemonPage";
+import { HomePage } from "./pages/home-page";
+import { PokemonPage } from "./pages/pokemon-page";
 import { usePage } from "./hooks/usePage";
 import { useEffect, useState } from "react";
 import { sendToDevvit } from "./utils";
@@ -25,9 +25,11 @@ export const App = () => {
   const [layoutVariant, setLayoutVariant] = useState("default");
 
   useEffect(() => {
+    // Send an INIT message to Devvit, handled in src/main.tsx
     sendToDevvit({ type: "INIT" });
   }, []);
 
+  // get the PostID from the INIT_RESPONSE message
   useEffect(() => {
     if (initData) {
       setPostId(initData.postId);

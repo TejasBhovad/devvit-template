@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { DevvitMessage, BlocksToWebviewMessage } from "../shared";
 
 /**
  * Triggers re-renders when a message is received from the Devvit webview.
@@ -6,7 +7,7 @@ import { useEffect, useState } from "react";
  *
  * @usage
  *
- * ```js
+ * ```ts
  * // somewhere in blocks land
  * context.ui.webView.postMessage('webview', {
  *   type: 'WORD_SUBMITTED_RESPONSE',
@@ -14,7 +15,7 @@ import { useEffect, useState } from "react";
  * });
  * ```
  *
- * ```jsx
+ * ```tsx
  * // somewhere in React land
  * const App = () => {
  *  const [loading, setLoading] = useState(false);
@@ -31,21 +32,24 @@ import { useEffect, useState } from "react";
  * }
  * ```
  */
-export const useDevvitListener = (eventType) => {
-  const [data, setData] = useState(undefined);
+export const useDevvitListener = <T extends BlocksToWebviewMessage["type"]>(
+  eventType: T,
+) => {
+  type Event = Extract<BlocksToWebviewMessage, { type: T }>;
+  const [data, setData] = useState<Event["payload"] | undefined>();
 
   useEffect(() => {
-    const messageHandler = (ev) => {
+    const messageHandler = (ev: MessageEvent<DevvitMessage>) => {
       if (ev.data.type !== "devvit-message") {
         console.warn(
-          `Received message with type ${ev.data.type} but expected 'devvit-message'`
+          `Received message with type ${ev.data.type} but expected 'devvit-message'`,
         );
         return;
       }
 
       const message = ev.data.data.message;
       if (message.type === eventType) {
-        setData(message.payload);
+        setData(message.payload as any);
       }
     };
 

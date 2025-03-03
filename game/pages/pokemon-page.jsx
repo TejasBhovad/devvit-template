@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PlaceholdersAndVanishInput } from "../components/wordInput";
+import { PlaceholdersAndVanishInput } from "../components/word-input";
 import { sendToDevvit } from "../utils";
 import { useDevvitListener } from "../hooks/useDevvitListener";
 
