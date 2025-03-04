@@ -5,7 +5,7 @@ import {
   WebviewToBlockMessage,
 } from "../game/shared.js";
 import { Preview } from "./components/Preview.jsx";
-import { getPokemonByName } from "./core/pokeapi.js";
+import { getPokemonByName } from "./backend/pokeapi.js";
 
 Devvit.addSettings([
   // Just here as an example
@@ -87,7 +87,7 @@ Devvit.addCustomPostType({
               break;
           }
         },
-      }
+      },
     );
 
     return (
