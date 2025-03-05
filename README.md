@@ -27,14 +27,18 @@ This repo focusses of eliminating typescript(where possible) and making the temp
 
 # How the game is structured
 
-`src` folder acts as the entry point for the game.
-`src/backend` folder contains the API calls and the backend logic.
-`src/constants.js` contains the secrets used in the game.
-`src/main.tsx` is the entry point for the game. It is where everything devvit related is configured(custom post types, custom menus, etc).
-`game` folder contains the game logic and the game components.
-`game/components` folder contains the game components.
-`game/hooks` folder contains the game hooks like navigation hooks, etc.
-`game/pages` folder contains the game pages.
-`games/public` folder contains the public assets like images, etc.
-`games/App.jsx` is the entry point for the game. It is where the game is structured.
-`games/shared.ts` contains the shared types and interfaces used in the game. Basically the types for Devvit Functions.
+`src` folder acts as the entry point for the game.\
+`src/backend` folder contains the API calls and the backend logic.\
+`src/constants.js` contains the secrets used in the game.\
+`src/main.tsx` is the entry point for the game. It is where everything devvit related is configured(custom post types, custom menus, etc).\
+`game` folder contains the game logic and the game components.\
+`game/components` folder contains the game components.\
+`game/hooks` folder contains the game hooks like navigation hooks, etc.\
+`game/pages` folder contains the game pages.\
+`games/public` folder contains the public assets like images, etc.\
+`games/App.jsx` is the entry point for the game. It is where the game is structured.\
+`games/shared.ts` contains the shared types and interfaces used in the game. Basically the types for Devvit Functions.\
+
+# Other references that might be useful
+
+- [Scheduler function](https://developers.reddit.com/docs/capabilities/scheduler)
