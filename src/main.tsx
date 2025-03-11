@@ -81,7 +81,33 @@ Devvit.addCustomPostType({
                 },
               });
               break;
+            case "GET_TOP_COMMENTS":
+              try {
+                const comments = await context.reddit
+                  .getComments({
+                    postId: context.postId!,
+                    limit: 5,
+                    sort: "top",
+                  })
+                  .all();
+                // console.log("Comments", comments);
 
+                postMessage({
+                  type: "TOP_COMMENTS_RESPONSE",
+                  payload: {
+                    comments: comments.map((comment) => ({
+                      id: comment.id,
+                      body: comment.body,
+                      author: comment.authorName,
+                      score: comment.score,
+                    })),
+                  },
+                });
+              } catch (error) {
+                console.error("Error fetching comments:", error);
+                context.ui.showToast("Failed to fetch comments");
+              }
+              break;
             default:
               console.error("Unknown message type", data satisfies never);
               break;

@@ -8,6 +8,7 @@ export const Navigation = ({ orientation = "horizontal" }) => {
   const pages = [
     { id: "home", label: "Home", icon: "🏠" },
     { id: "pokemon", label: "Pokemon", icon: "🎮" },
+    { id: "test", label: "Test", icon: "🔬" },
     // Add more pages as needed
   ];
 
@@ -18,7 +19,7 @@ export const Navigation = ({ orientation = "horizontal" }) => {
       className={cn(
         isVertical
           ? "flex flex-col items-start space-y-2"
-          : "bg-slate-800 px-4 py-3 shadow-md"
+          : "bg-slate-800 px-4 py-3 shadow-md",
       )}
     >
       {!isVertical && (
@@ -41,7 +42,7 @@ export const Navigation = ({ orientation = "horizontal" }) => {
                   "rounded px-3 py-1 text-sm transition-colors",
                   currentPage === page.id
                     ? "bg-slate-600 text-white"
-                    : "text-slate-300 hover:bg-slate-700 hover:text-white"
+                    : "text-slate-300 hover:bg-slate-700 hover:text-white",
                 )}
               >
                 {page.label}
@@ -71,7 +72,7 @@ export const Navigation = ({ orientation = "horizontal" }) => {
                   "flex w-full items-center rounded px-3 py-2 text-left text-sm transition-colors",
                   currentPage === page.id
                     ? "bg-slate-600 text-white"
-                    : "text-slate-300 hover:bg-slate-700 hover:text-white"
+                    : "text-slate-300 hover:bg-slate-700 hover:text-white",
                 )}
               >
                 <span className="mr-2">{page.icon}</span>

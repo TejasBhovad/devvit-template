@@ -5,7 +5,8 @@ export type WebviewToBlockMessage =
   | {
       type: "GET_POKEMON_REQUEST";
       payload: { name: string };
-    };
+    }
+  | { type: "GET_TOP_COMMENTS" };
 
 export type BlocksToWebviewMessage =
   | {
@@ -17,6 +18,17 @@ export type BlocksToWebviewMessage =
   | {
       type: "GET_POKEMON_RESPONSE";
       payload: { number: number; name: string; error?: string };
+    }
+  | {
+      type: "TOP_COMMENTS_RESPONSE";
+      payload: {
+        comments: Array<{
+          id: string;
+          body: string;
+          author: string;
+          score: number;
+        }>;
+      };
     };
 
 export type DevvitMessage = {
