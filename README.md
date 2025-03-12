@@ -1,6 +1,6 @@
 # React + Tailwind Webview Template for Devvit
 
-This is a template for creating a Devvit webview app using React and Tailwind CSS. This repo is high based off of [devvit-webview-react](https://github.com/mwood23/devvit-webview-react) repository.
+This is a template for creating a Devvit webview app using React and Tailwind CSS. This repo is highly based off of [devvit-webview-react](https://github.com/mwood23/devvit-webview-react) repository.
 This repo focusses of eliminating typescript(where possible) and making the template more beginner friendly.
 
 > Yes there is typescript in the files, but devvit requires typescript as entry point.

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { HomePage } from "./pages/home-page";
 import { PokemonPage } from "./pages/pokemon-page";
-import TestPage from "./pages/test-page";
+import CommentPage from "./pages/comments-page";
 import { usePage } from "./hooks/usePage";
 import { useEffect, useState } from "react";
 import { sendToDevvit } from "./utils";
@@ -14,8 +14,8 @@ const getPage = (page, { postId }) => {
       return <HomePage postId={postId} />;
     case "pokemon":
       return <PokemonPage />;
-    case "test":
-      return <TestPage />;
+    case "comments":
+      return <CommentPage />;
     default:
       throw new Error(`Unknown page: ${page}`);
   }

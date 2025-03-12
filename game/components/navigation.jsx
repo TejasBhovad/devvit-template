@@ -8,7 +8,7 @@ export const Navigation = ({ orientation = "horizontal" }) => {
   const pages = [
     { id: "home", label: "Home", icon: "🏠" },
     { id: "pokemon", label: "Pokemon", icon: "🎮" },
-    { id: "test", label: "Test", icon: "🔬" },
+    { id: "comments", label: "Comments", icon: "🔬" },
     // Add more pages as needed
   ];
 
