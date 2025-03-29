@@ -8,7 +8,6 @@ import { Preview } from "./components/Preview.jsx";
 import { getPokemonByName } from "./backend/pokeapi.js";
 
 Devvit.addSettings([
-  // Just here as an example
   {
     name: DEVVIT_SETTINGS_KEYS.SECRET_API_KEY,
     label: "API Key for secret things",
@@ -26,7 +25,6 @@ Devvit.configure({
 });
 
 Devvit.addMenuItem({
-  // Please update as you work on your idea!
   label: "Make my experience post",
   location: "subreddit",
   forUserType: "moderator",
@@ -34,7 +32,6 @@ Devvit.addMenuItem({
     const { reddit, ui } = context;
     const subreddit = await reddit.getCurrentSubreddit();
     const post = await reddit.submitPost({
-      // Title of the post. You'll want to update!
       title: "My first experience post",
       subredditName: subreddit.name,
       preview: <Preview />,
@@ -76,8 +73,7 @@ Devvit.addCustomPostType({
                   name: pokemon.name,
                   number: pokemon.id,
                   // Note that we don't allow outside images on Reddit if
-                  // wanted to get the sprite. Please reach out to support
-                  // if you need this for your app!
+                  // wanted to get the sprite. You can use the image URL and upload to internal s3 bucket
                 },
               });
               break;
